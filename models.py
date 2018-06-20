@@ -40,14 +40,14 @@ class CountryManager(models.Manager):
 
 
 class Country(models.Model):
-    objects = CountryManager()
+    objects = CountryManager()  # override default manager
     name = models.CharField(
         'Название',
         max_length=255
     )
 
 class City(models.Model):
-    objects = CityManager()
+    objects = CityManager()  # override default manager
     country = models.ForeignKey(
         Country,
         verbose_name='Страна',
